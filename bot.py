@@ -48,7 +48,7 @@ def get_domain_input(prompt):
         print(f"\n{Fore.LIGHTRED_EX}🛑 Program interrupted by the user.")
         exit()
 
-URLS = ["optimize.gaia.domains"]
+URLS = ["dharma.gaia.domains"]
 
 # Menampilkan domain dan ID yang dipilih oleh pengguna
 print(f"{Fore.LIGHTCYAN_EX}🌍 Selected Domain: {Fore.LIGHTWHITE_EX}{URLS[0]}")
