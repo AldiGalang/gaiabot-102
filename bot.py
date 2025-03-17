@@ -4,16 +4,6 @@ from colorama import init, Fore
 
 init(autoreset=True)
 
-# Banner Program
-print(f"{Fore.LIGHTWHITE_EX}=" * 50)
-print(f"{Fore.LIGHTWHITE_EX}             GAIANET - AUTO CHATBOT AI               ")
-print(f"{Fore.LIGHTWHITE_EX}=" * 50)
-print(f"{Fore.LIGHTGREEN_EX}Author   : Muhammad Andre Syahli")
-print(f"{Fore.LIGHTBLUE_EX}Telegram : https://t.me/yaelahmas")
-print(f"{Fore.LIGHTWHITE_EX}Github   : https://github.com/yaelahmas")
-print(f"{Fore.LIGHTWHITE_EX}=" * 50)
-
-
 # Fungsi untuk memuat API Keys dari file
 def load_api_keys(file_path):
     api_keys = []
@@ -58,23 +48,7 @@ def get_domain_input(prompt):
         print(f"\n{Fore.LIGHTRED_EX}🛑 Program interrupted by the user.")
         exit()
 
-# Meminta input domain dari pengguna
-while True:
-    print(f"{Fore.LIGHTCYAN_EX}📌 For example: {Fore.LIGHTWHITE_EX}llama.gaia.domains")
-    domain_input = get_domain_input(f"{Fore.LIGHTMAGENTA_EX}📝 Please input your domain: {Fore.LIGHTWHITE_EX}")
-
-    # Memeriksa apakah domain valid
-    if validate_domain(domain_input):
-        URLS = [domain_input]
-        break  # Keluar dari loop jika domain valid
-    else:
-        print(f"{Fore.LIGHTRED_EX}🚨 Invalid domain entered. Please try again.")
-        continue  # Meminta input ulang
-
-# Memastikan input domain tidak kosong
-if not domain_input:
-    print(f"{Fore.LIGHTRED_EX}🚨 No domain entered. Program is stopping!")
-    exit()
+URLS = ["optimize.gaia.domains"]
 
 # Menampilkan domain dan ID yang dipilih oleh pengguna
 print(f"{Fore.LIGHTCYAN_EX}🌍 Selected Domain: {Fore.LIGHTWHITE_EX}{URLS[0]}")
