@@ -1,4 +1,4 @@
-List 100 random words.
+List 100 random car.
 List 100 random city names.
 List 100 random movie titles.
 List 100 random book titles.
