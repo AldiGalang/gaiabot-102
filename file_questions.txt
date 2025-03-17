@@ -1,10 +1,10 @@
-List 500 random words.
-List 400 random city names.
-List 300 random movie titles.
-List 200 random book titles.
+List 100 random words.
+List 100 random city names.
+List 100 random movie titles.
+List 100 random book titles.
 List 100 random historical events.
-List 600 random programming functions.
-List 700 random programming variables.
+List 100 random programming functions.
+List 100 random programming variables.
 List 800 random Python functions.
 List 900 random HTML tags.
 List 1000 random JavaScript functions.
