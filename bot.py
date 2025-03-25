@@ -1,8 +1,19 @@
 
-import aiohttp, asyncio, re
+
+import aiohttp, asyncio, re, random
 from colorama import init, Fore
 
 init(autoreset=True)
+
+# Banner Program
+print(f"{Fore.LIGHTWHITE_EX}=" * 50)
+print(f"{Fore.LIGHTWHITE_EX}             GAIANET - AUTO CHATBOT AI               ")
+print(f"{Fore.LIGHTWHITE_EX}=" * 50)
+print(f"{Fore.LIGHTGREEN_EX}Author   : Muhammad Andre Syahli")
+print(f"{Fore.LIGHTBLUE_EX}Telegram : https://t.me/yaelahmas")
+print(f"{Fore.LIGHTWHITE_EX}Github   : https://github.com/yaelahmas")
+print(f"{Fore.LIGHTWHITE_EX}=" * 50)
+
 
 # Fungsi untuk memuat API Keys dari file
 def load_api_keys(file_path):
@@ -35,20 +46,11 @@ if not API_KEYS or not QUESTIONS:
     print(f"{Fore.LIGHTRED_EX}🚨 API Key and Question list not found. Program is stopping!")
     exit()
 
-# Fungsi untuk validasi domain dengan format yang benar
-def validate_domain(domain):
-    pattern = r"^[a-zA-Z0-9\-\.]+\.gaia\.domains$"
-    return bool(re.match(pattern, domain))
+# Langsung menetapkan domain
+domain_input = "optimize.gaia.domains"
+URLS = [domain_input]
 
-# Fungsi untuk mendapatkan input Domain
-def get_domain_input(prompt):
-    try:
-        return input(prompt).strip()
-    except KeyboardInterrupt:
-        print(f"\n{Fore.LIGHTRED_EX}🛑 Program interrupted by the user.")
-        exit()
-
-URLS = ["dharma.gaia.domains"]
+print(f"{Fore.LIGHTCYAN_EX}📌 Using domain: {Fore.LIGHTWHITE_EX}{domain_input}")
 
 # Menampilkan domain dan ID yang dipilih oleh pengguna
 print(f"{Fore.LIGHTCYAN_EX}🌍 Selected Domain: {Fore.LIGHTWHITE_EX}{URLS[0]}")
@@ -148,7 +150,7 @@ async def main():
                 failed += 1
             
             if index < total_questions:
-                await countdown_next_questions(10)  # Tunggu sebelum pertanyaan berikutnya
+                await countdown_next_questions(random.randint(3, 7))  # Tunggu sebelum pertanyaan berikutnya
         
         print(f"{Fore.LIGHTBLUE_EX}🎯 Session {Fore.LIGHTWHITE_EX}{cycle} {Fore.LIGHTBLUE_EX}completed!")
         print(f"{Fore.LIGHTGREEN_EX}✅ Successfully answered: {Fore.LIGHTWHITE_EX}{answered}")
